@@ -43,8 +43,10 @@ public class FileSplitter
                 String premno = StringUtils.getPremnoFromline(line);
 
                 File outputFile =
-                        new File(outputDirectory + File.separator + "CompanyGrossData_" + premno + ".txt");
-                dumpLineIntoFile(outputFile, line);
+                        new File(outputDirectory + File.separator + "CompanyGrossData_"
+                                + premno + ".txt");//creation of the file variable with an existing file name or
+                                                    // with a new one
+                dumpLineIntoFile(outputFile, line);//write concurrently into the output file
                 getNextUniqueIndex();
                 if(counter.intValue()%(100000)==0)
                 {
